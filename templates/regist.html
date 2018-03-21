@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    注册会员
+{% endblock %}
+
+
+
+{% block content %}
+    <div style="margin-left: 15px">
+     <div id="regist" style="margin-top: 80px">
+
+         <div id="header" align="left" style="margin-left: 2px">
+             <h4><a href="/membership/main/">&lt 返回</a></h4>
+         </div>
+
+         <h5 style="margin-top: 20px;">欢迎加入【由我】大家庭</h5>
+         <h1 style="margin-top: 0px;">输入手机号码</h1>
+
+         </br>
+         <form action="/membership/regist/" method="post" enctype="multipart/form-data">
+             {% csrf_token %}
+             <div class="input-group">
+                 <span class="input-group-addon">手机：</span>
+                 <input id='account' type="text" class="form-control"
+                        placeholder="请填写您真实的11位电话号码" aria-descirbedby="basic-addon1"
+                        name="userPhone" style="width: 280px">
+                <br/>
+            </div>
+                <span id="accounterr" class="error">账号必须是11位数字的电话号码</span>
+                <span id="checkerr" class="error">该账户已被注册，请重新输入</span>
+                <br/>
+
+            <div class="input-group">
+                <span class="input-group-addon">密码：</span>
+                <input id="pass" type="password" class="form-control"
+                       aria-descirbedby="basic-addon1" placeholder="密码长度为6-16个字符"
+                       name = 'userPass' style="width: 280px">
+                <br/>
+                <span id="passerr" class="error">密码格式输入错误</span>
+            </div>
+             <br/>
+
+            <div class="input-group" >
+                <span class="input-group-addon">确认密码：</span>
+                <input id="passwd" type="password" class="form-control"
+                       aria-descirbedby="basic-addon1" placeholder="再次填写密码"
+                       name = 'confirmPass' style="width: 252px">
+                <br/>
+                <span id="passwderr" class="error">两次密码输入不同</span>
+
+            </div>
+             <br/>
+        <div>
+            <input type="submit" value="注册" style="width: 347px; height:34px ">
+        </div>
+        </form>
+     </div>
+</div>
+{% endblock %}

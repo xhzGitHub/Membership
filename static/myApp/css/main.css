@@ -1,0 +1,46 @@
+div.head{
+    height: 240px  ;
+    background-image: url(/static/myApp/img/membership.png) ;
+    background-repeat: no-repeat ;
+    background-size: 350px ;
+    background-position: center center;
+    margin-top: 5em;
+    width: 375px;
+}
+
+div.Main_header{
+    height: 160px;
+    width: 380px;
+}
+div.zunjingdehuiyuan{
+    margin-left: 30px;
+}
+div.zunjingdehuiyuan h3{
+    display: inline-block;color: #985f0d
+}
+
+a.colofa{
+    font-weight: bold;
+    font-size:150%;
+    margin-top: 0em;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0em;
+    width: 150px;
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+div.huiyuandengji{
+    margin-left: 10px;
+    width: 70px;
+}
+
+div.huiyuandengji h5{
+    width: 80px;margin-bottom: 0px;margin-top: 20px;margin-left: 55px;
+                                    color:#eeeeee;font-weight: bold
+}
+
+
+
+

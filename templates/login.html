@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    登录
+{% endblock %}
+
+{% block content %}
+<div style="margin-left: 15px">
+
+    <div id="login" style="margin-top: 100px" >
+        <h1>欢迎回来</h1>
+        </br>
+        <div class="row" style="
+                        margin-bottom: 15px;
+                        padding-left: 0px;
+                        padding-right: 22px;" align="center">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" align="left">
+               <h4><a href="/membership/regist/" style="">新会员注册</a></h4>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" align="right">
+               <h4><a href="/membership/main/" style="align-content: left"> 返回</a></h4>
+            </div>
+
+        </div>
+
+        <div id="box" style="">
+            <form action="/membership/login/" method="post">
+            {% csrf_token %}
+                <div class="input-group input-group-lg" >
+                 <span class="input-group-addon" id="basic-addon1">账号</span>
+                 {# <input type="text" class="form-control" placeholder="Username"aria-describedby="basic-addon1"> #}
+                    {{ form.userphone }}
+                    {% if error.userphone.0 %}
+                        <span>{{ error.userphone.0 }}</span>
+                    {% endif %}
+                </div>
+                <br/>
+                <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="basic-addon1">密码</span>
+                    {{ form.passwd }}
+                    <br/>
+                    {% if error.passwd.0 %}
+                        <span>{{ error.passwd.0 }}</span>
+                    {% endif %}
+                </div>
+                <br/>
+            <div align="left">
+                <input type="submit" value="登录" style="width: 345px;height: 46px;
+                font-size: 130%; font-family: 微软雅黑;">
+            </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
