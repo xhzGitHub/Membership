@@ -25,7 +25,7 @@ SECRET_KEY = 'a_6nj$7)%niihtay_!^_5jpd(v57t3h&8-g8ggxcd(_0d!q8k7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost', '.http://47.97.223.75/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,9 +81,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Membership_System',
         'USER': 'root',
-        'PASSWORD': 'xhz3522715',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'PASSWORD': 'huawei@123',
+        'HOST': os.environ.get('MYSQL_PORT_3306_TCP_ADDR'),
+	'OPTIONS':{
+		"init_command": "SET foreign_key_checks=0;",
+	}
     }
 }
 
@@ -131,7 +133,7 @@ STATICFILES_DIRS = [
 
 #上传文件目录
 MEDIA_ROOT = os.path.join(BASE_DIR, r'static\upfile')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #celery
 import djcelery
 djcelery.setup_loader() #初始化
